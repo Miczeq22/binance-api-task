@@ -1,19 +1,21 @@
 import { Controller } from '@building-blocks/api/rest/controller';
-import { Router } from 'express';
+import { RequestHandler, Router } from 'express';
+
+interface Dependencies {
+  getBtcHistoricalPriceChangesAction: RequestHandler;
+}
 
 export class CryptoChangesController extends Controller {
-  constructor() {
+  constructor(private readonly dependencies: Dependencies) {
     super('/crypto-changes');
   }
 
   public getRouter(): Router {
+    const { getBtcHistoricalPriceChangesAction } = this.dependencies;
+
     const router = Router();
 
-    router.get('/', (_, res) =>
-      res.status(200).json({
-        message: 'Hello, World!',
-      }),
-    );
+    router.get('/', [getBtcHistoricalPriceChangesAction]);
 
     return router;
   }

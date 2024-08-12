@@ -26,10 +26,7 @@ export class BinanceCryptoPriceProvider implements CryptoPriceProvider {
 
     // TODO: add validation
     // TODO: Add exponential backoff
-
-    console.log({
-      result: JSON.stringify(result.data, null, 2),
-    });
+    // TODO: Add cache
 
     return result.data.map((entry: string[]) => ({
       symbol,
