@@ -1,0 +1,31 @@
+{
+  "include": ["src", "types"],
+  "compilerOptions": {
+    "strict": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ES2018",
+    "lib": ["ESNext", "DOM"],
+    "downlevelIteration": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "baseUrl": ".",
+    "types": ["node", "jest"],
+    "paths": {
+      "@errors/*": ["./src/building-blocks/errors/*"],
+      "@server/*": ["./src/server/*"],
+      "@building-blocks/*": ["./src/building-blocks/*"],
+      "@modules/*": ["./src/modules/*"],
+      "@database/*": ["./src/database/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@domain-events/*": ["..src/modules/domain-events/*"]
+    }
+  }
+}
