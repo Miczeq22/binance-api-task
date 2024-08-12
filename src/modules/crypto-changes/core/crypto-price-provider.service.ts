@@ -2,6 +2,7 @@ export interface CryptoPrice {
   symbol: string;
   // In cents
   closePrice: number;
+  timestamp: Date;
 }
 
 export interface FetchPriceHistoryBySymbolPayload {

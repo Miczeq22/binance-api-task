@@ -23,7 +23,7 @@ export class GetBtcHistoricalPriceChangesQueryHandler
 
     return {
       symbol: 'BTCUSDT',
-      percentagePriceChanges: priceChanges,
+      priceChanges: priceChanges.map((entry) => entry.toJSON()),
     };
   }
 }
