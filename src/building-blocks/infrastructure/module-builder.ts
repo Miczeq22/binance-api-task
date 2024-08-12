@@ -1,11 +1,10 @@
 import { AwilixContainer } from 'awilix';
-import { CronJob, EventDispatcher, EventSubscriber, ModuleInitializator } from '@building-blocks/app';
+import { CronJob, EventSubscriber, ModuleInitializator } from '@building-blocks/app';
 import { Controller } from '@building-blocks/api/rest/controller';
 
 import { Logger } from './logger/logger';
 import { Job } from '@building-blocks/app/job';
 import { DomainEvent } from '@building-blocks/core';
-import { Cache } from './cache/cache.service';
 
 export interface AppModule {
   name: string;
@@ -18,8 +17,8 @@ export interface AppModule {
 
 export interface AppModuleDependencies {
   logger: Logger;
-  eventDispatcher: EventDispatcher;
-  cache: Cache;
+  // eventDispatcher: EventDispatcher;
+  // cache: Cache;
 }
 
 export class ModuleBuilder {
